@@ -1,74 +1,84 @@
-# SEO Rank Tracker
+# SEOnova
 
-**SEO Rank Tracker** is an AI-powered SEO analyzer built with React, Vite, and Tailwind CSS. It provides instant SEO audits, performance scores, keyword analysis, and actionable recommendations for any website.
+### AI-Powered SEO Analysis & Google Rank Tracking Platform
+
+SEOnova is a full-stack AI-powered SEO platform that helps users analyze websites, identify SEO issues, receive AI-generated optimization recommendations, and track keyword rankings on Google over time.
+
+The platform combines **browser automation, AI-powered analysis, REST APIs, MongoDB, and automated background jobs** to provide an end-to-end SEO monitoring solution.
+
+---
 
 ## Features
 
-- **Instant SEO Audits:** Get comprehensive insights into your website's SEO performance.
-- **Performance Scores:** Analyze page speed and Core Web Vitals.
-- **Keyword Analysis:** Discover and optimize for relevant keywords.
-- **Actionable Recommendations:** Receive step-by-step guidance to improve your rankings.
-- **AI-Powered Insights:** Leverage AI to analyze content quality and structure.
+### AI-Powered SEO Analysis
 
-## Tech Stack
+Analyze a website URL and generate a detailed SEO report containing:
 
-- **Frontend:** React 19, React Router, Tailwind CSS 4
-- **Icons:** Lucide React, React Simple Icons
-- **Build Tool:** Vite
-- **Language:** TypeScript
+- Overall SEO Score
+- SEO Score
+- Performance Score
+- Accessibility Score
+- Best Practices Score
+- SEO Issues
+- Issue Severity
+- Optimization Recommendations
+- Keyword Analysis
 
-## Getting Started
+### Website Scraping
 
-### Prerequisites
+SEOnova uses **Playwright + Browserbase** to extract real website information including:
 
-- Node.js (v18 or higher recommended)
-- npm or yarn
+- Page Title
+- Meta Description
+- Canonical URL
+- Robots Meta
+- Open Graph Metadata
+- Twitter Card Metadata
+- Viewport
+- Charset
+- H1–H6 Headings
+- Internal Links
+- External Links
+- Images
+- Missing Image Alt Text
+- Word Count
+- Page Size
+- Load Time
+- HTTP Status
 
-### Installation
+### Gemini AI Analysis
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/GreatStackDev/seo-rank-tracker.git
-    ```
-2. Navigate to the project directory:
-    ```bash
-    cd seo-rank-tracker
-    ```
-3. Install dependencies:
-    ```bash
-    npm install
-    ```
+The extracted website data is passed to Gemini AI for analysis.
 
-### Running the Development Server
+The AI evaluates the website and generates:
 
-Start the Vite development server:
+- SEO scores
+- Keyword insights
+- SEO issues
+- Severity levels
+- Optimization recommendations
 
-```bash
-npm run dev
+### Google Keyword Rank Tracking
+
+Track how a website ranks for specific keywords on Google.
+
+The system:
+
+- Scans up to 5 Google result pages
+- Checks up to 50 search results
+- Finds the target domain
+- Stores the current ranking position
+- Tracks position changes
+- Stores ranking history
+- Tracks the best ranking position
+- Identifies competitors
+
+### Automated Rank Updates
+
+SEOnova uses `node-cron` to automatically update active keyword rankings.
+
+The scheduled job runs:
+
+```text
+Every day at 6:00 AM
 ```
-
-### Building for Production
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-To preview the production build locally:
-
-```bash
-npm run preview
-```
-
-## Contributing
-
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for more details.
-
-## Code of Conduct
-
-Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before participating in our community.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
